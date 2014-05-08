@@ -49,8 +49,9 @@ For e.g. 'http://blahblah.us1.list-manage.com/subscribe/post-json?u=5afsdhfuhdsi
         $(this).each(function(i, elem) {
             var form = $(elem);
             var email = form.find('input[type=email]');
-            var label = form.find('label[for=' + email.attr('id') + ']');
-
+            //var label = form.find('label[for=' + email.attr('id') + ']'); // Breaks in IE
+            var label = $('#mce_ajax');
+            
             var settings = $.extend({
                 'url': form.attr('action'),
                 'language': 'en'
